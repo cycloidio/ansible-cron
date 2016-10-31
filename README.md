@@ -1,2 +1,2 @@
 # ansible-cron
-Configure crontab and setup conrs
+Configure crontab and setup crons
