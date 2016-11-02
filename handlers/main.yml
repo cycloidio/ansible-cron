@@ -1,0 +1,14 @@
+---
+# handlers file for cron
+
+- name: cron restart
+  service: name=cron
+           state=restarted
+  sudo: yes
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+- name: crond restart
+  service: name=crond
+           state=restarted
+  sudo: yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

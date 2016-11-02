@@ -1,0 +1,11 @@
+---
+cron_file: null
+crons: []
+
+default_crontab_time:
+  hourly: "17 *    * * *"
+  daily: "25 6    * * *"
+  weekly: "47 6    * * 7"
+  monthly: "52 6    1 * *"
+
+cron_crontab_time: "{{ default_crontab_time |combine(crontab_time|default({})) }}"

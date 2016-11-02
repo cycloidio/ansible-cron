@@ -1,0 +1,8 @@
+---
+- name: Generate /etc/crontab from template
+  template:
+    src: crontab.j2
+    dest: /etc/crontab
+    mode: 0644
+    owner: root
+    group: root

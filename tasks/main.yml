@@ -1,0 +1,7 @@
+---
+# tasks file for cron
+- include: crontab.yml
+  tags: cron
+
+- include: cron.yml
+  tags: cron

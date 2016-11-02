@@ -1,0 +1,18 @@
+---
+- name: jobs
+  cron:
+    name: "{{ item.name }}"
+    job: "{{ item.job}}"
+    minute: "{{ item.minute|default('*') }}"
+    hour: "{{ item.hour|default('*') }}"
+    day: "{{ item.day|default('*') }}"
+    month: "{{ item.month|default('*') }}"
+    weekday: "{{ item.weekday|default('*') }}"
+    cron_file: "{{ item.file|default(cron_file) }}"
+    user: "{{ item.user|default('root') }}"
+    state: "{{ item.state|default('present') }}"
+  with_items: crons
+  notify:
+    - cron restart
+  when: crons|length > 0
+  sudo: yes
