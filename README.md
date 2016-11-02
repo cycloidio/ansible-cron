@@ -3,6 +3,9 @@ Cron
 
 Configure crontab and setup crons on hosts.
 
+Generaly Dev and Preprod plateform are stopped the night and weekend. By default daily, weekly and monthly are run during the night. Because dev and preprod are stopped, Daily cron are never run. Cron module allow us to override the schedule and run cron during the day.
+
+
 Role Variables
 --------------
 
