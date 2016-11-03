@@ -15,4 +15,3 @@
   notify:
     - cron restart
   when: crons|length > 0
-  sudo: yes
