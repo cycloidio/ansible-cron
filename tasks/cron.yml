@@ -11,7 +11,7 @@
     cron_file: "{{ item.file|default(cron_file) }}"
     user: "{{ item.user|default('root') }}"
     state: "{{ item.state|default('present') }}"
-  with_items: crons
+  with_items: "{{ crons }}"
   notify:
     - cron restart
   when: crons|length > 0
